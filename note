@@ -1,0 +1,63 @@
+==================== LINUX ====================
+
+	HOW TO SHOW CURRENTLY ENABLED GTK-THEME
+	Source: https://askubuntu.com/a/765598/356625
+
+gsettings get org.gnome.desktop.interface gtk-theme
+
+
+	HOW TO SHOW CURRENTLY ENABLED ICON-THEME
+
+gsettings get org.gnome.desktop.interface icon-theme
+
+
+	HOW TO COPY ALL CONTENT OF A FILE
+	Dependency: xsel
+
+xsel -b < filename
+
+
+	HOW TO DELETE A DIRECTORY CONTAINING FILES
+
+rm -rf path/to/filename
+
+
+==================== VIM =====================
+
+	HOW TO OPEN URL IN WEB BROWSER FROM VIM
+
+gx
+
+
+	HOW TO SEARCH A LINE THAT HAS 2 SPECIFIC WORDS IN ORDER
+	Source: https://stackoverflow.com/a/1173904/9157799
+
+/word1.*word2
+
+
+	HOW TO FIND TWO WORDS IN EITHER ORDER
+	Source: https://vim.fandom.com/wiki/Search_patterns
+
+/.*word1\&.*word2
+
+
+	CLEAR SEARCH HIGHLIGHT UNTIL NEXT SEARCH
+		(until n or N is pressed or a fresh search is performed)
+	Source: https://vi.stackexchange.com/a/5392/20429
+
+:noh
+:nohlsearch
+
+
+
+==================== JAVA ====================
+
+	HOW TO COMPILE SOURCE FILE TO A DIFFERENT DIRECTORY
+
+javac -d classes Main.java
+
+
+	HOW TO EXECUTE JAVA CLASSES IN A DIFFERENT DIRECTORY
+
+java -cp classes Main
+	// -cp stands for classpath
