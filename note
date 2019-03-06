@@ -22,6 +22,11 @@ xsel -b < filename
 rm -rf path/to/filename
 
 
+	HOW TO FIND A FILE IN THE CURRENT DIRECTORY AND SUBDIRECTORIES
+
+find . -name "*filename*"
+
+
 ==================== VIM =====================
 
 	HOW TO OPEN URL IN WEB BROWSER FROM VIM
@@ -54,10 +59,45 @@ gx
 
 	HOW TO COMPILE SOURCE FILE TO A DIFFERENT DIRECTORY
 
-javac -d classes Main.java
+javac -d Classes Main.java
+	// make sure Classes directory is exist
 
 
 	HOW TO EXECUTE JAVA CLASSES IN A DIFFERENT DIRECTORY
 
 java -cp classes Main
 	// -cp stands for classpath
+
+
+	HOW TO SHOW ONLY TWO DIGIT AFTER COMMA/DOT
+	Source: https://stackoverflow.com/a/10959585/9157799
+
+String.format("%.2f", stringVariable)
+
+
+	HOW TO CREATE A JAR FILE
+	Note  :	- Put the class file with the folder containing it
+			- Nama file jar tidak harus nama package,
+				nama package adalah nama folder yang memuat class
+				pastikan folder itu ada di dalam file jar
+	Source: https://www.webucator.com/how-to/how-create-jar-file-java.cfm
+			https://stackoverflow.com/a/18146453/9157799
+
+jar cvf lokasiOutput/NamaFileJar.jar -C namaProject/Classes .
+	// or
+jar cvf packageName.jar -C pathTo packageName
+	// to choose only one specified dir
+
+
+	HOW TO USE PACKAGE IN A JAR FILE
+	Source: https://stackoverflow.com/a/460382/9157799
+
+javac -cp jarfile.jar Main.java
+java -cp jarfile.jar Main
+
+
+	HOW TO COMPILE JAVA PACKAGE SOURCE FROM ANOTHER PROJECT
+	Source: https://stackoverflow.com/a/4765023/9157799
+			https://stackoverflow.com/a/6623214/9157799
+
+javac -d currentProjectName/Classes $(find anotherProjectName/packagename -name '*.java')
