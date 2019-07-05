@@ -27,6 +27,15 @@ rm -rf path/to/filename
 find . -name "*filename*"
 
 
+	HOW TO EXTRACT .tar.gz
+	Source: https://www.interserver.net/tips/kb/extract-tar-gz-files-using-linux-command-line/
+
+tar xvzf file.tar.gz
+	// or
+tar xvzf file.tar.gz -C /path/to/somedirectory
+	// extract to a different directory
+
+
 ==================== VIM =====================
 
 	HOW TO OPEN URL IN WEB BROWSER FROM VIM
@@ -54,6 +63,12 @@ gx
 :nohlsearch
 
 
+	FOLDING
+
+	  fold/unfold: za
+	  fold all   : zM
+	unfold all   : zR
+
 
 ==================== JAVA ====================
 
@@ -75,6 +90,13 @@ java -cp classes Main
 String.format("%.2f", stringVariable)
 
 
+	HOW TO COMPILE JAVA PACKAGE SOURCE FROM ANOTHER PROJECT
+	Source: https://stackoverflow.com/a/4765023/9157799
+			https://stackoverflow.com/a/6623214/9157799
+
+javac -d currentProjectName/Classes $(find anotherProjectName/packagename -name '*.java')
+
+
 	HOW TO CREATE A JAR FILE
 	Note  :	- Put the class file with the folder containing it
 			- Nama file jar tidak harus nama package,
@@ -92,12 +114,5 @@ jar cvf packageName.jar -C pathTo packageName
 	HOW TO USE PACKAGE IN A JAR FILE
 	Source: https://stackoverflow.com/a/460382/9157799
 
-javac -cp jarfile.jar Main.java
-java -cp jarfile.jar Main
-
-
-	HOW TO COMPILE JAVA PACKAGE SOURCE FROM ANOTHER PROJECT
-	Source: https://stackoverflow.com/a/4765023/9157799
-			https://stackoverflow.com/a/6623214/9157799
-
-javac -d currentProjectName/Classes $(find anotherProjectName/packagename -name '*.java')
+javac -cp jarfile.jar:anotherJarfile.jar Main.java
+java -cp jarfile.jar:anotherJarfile.jar Main
