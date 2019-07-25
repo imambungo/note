@@ -65,9 +65,14 @@ gx
 
 	FOLDING
 
-	  fold/unfold: za
-	  fold all   : zM
-	unfold all   : zR
+  fold/unfold: za
+  fold all   : zM
+unfold all   : zR
+
+
+	EDIT TERMINAL COMMAND IN $EDITOR
+
+CTRL+(x->e)
 
 
 ==================== JAVA ====================
